@@ -1,5 +1,5 @@
 'use strict';
-const config = require('./main');
+const config = require('./');
 
 module.exports = function() {
 
@@ -18,5 +18,5 @@ module.exports = function() {
   mongoose.connection.on('disconnected', () => console.log('mongodb disconnected'));
 
   process.on('SIGINT', () => mongoose.connection.close(() => process.exit(0)));
-  
+
 };
